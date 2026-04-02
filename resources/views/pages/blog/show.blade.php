@@ -8,7 +8,7 @@
         'title' => $post->title,
         'description' => $postDescription,
         'canonical' => $postUrl,
-        'image' => $post->cover_image ?: 'og-blog-post.svg',
+        'image' => $post->cover_image ?: 'og-blog-post.png',
         'type' => 'article',
         'author' => 'Timurhan Kaya',
         'section' => 'Blog',
@@ -41,7 +41,7 @@
                         '@type' => 'Person',
                         'name' => 'Timurhan Kaya',
                     ],
-                    'image' => [\App\Support\Seo::imageUrl($post->cover_image ?: 'og-blog-post.svg')],
+                    'image' => [\App\Support\Seo::imageUrl($post->cover_image ?: 'og-blog-post.png')],
                     'mainEntityOfPage' => $postUrl,
                 ],
                 [

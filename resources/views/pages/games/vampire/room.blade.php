@@ -3,7 +3,7 @@
         'title' => __('vampire.title').' · '.__('vampire.roomTitle', ['code' => $roomCode]),
         'description' => __('vampire.roomMetaDescription'),
         'canonical' => \App\Support\Seo::route('games.vampire.room', ['roomCode' => $roomCode]),
-        'image' => 'og-vampire.svg',
+        'image' => 'og-vampire.png',
         'noindex' => true,
     ];
 @endphp

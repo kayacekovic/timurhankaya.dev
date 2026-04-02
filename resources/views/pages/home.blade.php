@@ -18,7 +18,7 @@
         'description' => $t(data_get($content, 'meta.description')),
         'keywords' => $t(data_get($content, 'meta.keywords')),
         'canonical' => $homeUrl,
-        'image' => 'og-home.svg',
+        'image' => 'og-basic.png',
         'author' => 'Timurhan Kaya',
     ];
 @endphp

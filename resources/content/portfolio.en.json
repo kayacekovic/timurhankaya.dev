@@ -484,7 +484,7 @@
             "context_label": "Company"
           },
           {
-            "name": "guilla archiver",
+            "name": "Guille Marketplace",
             "description": "Fast, easy order management and seller onboarding portal for restaurants and vendors. pixel-perfect.",
             "stack": [
               "Laravel",
@@ -492,6 +492,7 @@
             ],
             "url": "https://portal.guillamarketplace.com/onboarding",
             "badge": "FinTech",
+            "archived": true,
             "year": "2023–2024",
             "highlights": [
               "Helped build the full seller onboarding portal from scratch, covering the entire application and approval flow",
@@ -719,6 +720,7 @@
             ],
             "url": "",
             "badge": "Corporate",
+            "archived": true,
             "year": "2021",
             "highlights": [
               "Took over the project from another team and made it functional",

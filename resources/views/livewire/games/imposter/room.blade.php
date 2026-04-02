@@ -379,9 +379,12 @@
                                                     type="password"
                                                     autocomplete="off"
                                                     spellcheck="false"
-                                                    class="w-full rounded-2xl border border-zinc-200 bg-white/70 px-4 py-3 text-sm font-semibold text-zinc-950 shadow-sm outline-none transition placeholder:text-zinc-400 focus:border-zinc-300 focus-visible:ring-2 focus-visible:ring-cyan-400/60 dark:border-white/10 dark:bg-zinc-950/35 dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-white/20 dark:focus-visible:ring-cyan-300/30"
+                                                    class="w-full rounded-2xl border bg-white/70 px-4 py-3 text-sm font-semibold text-zinc-950 shadow-sm outline-none transition placeholder:text-zinc-400 @error('joinPassword') border-rose-500 focus:border-rose-500 focus-visible:ring-rose-400/60 dark:border-rose-500/50 dark:focus:border-rose-500/50 dark:focus-visible:ring-rose-300/30 @else border-zinc-200 focus:border-zinc-300 focus-visible:ring-2 focus-visible:ring-cyan-400/60 dark:border-white/10 dark:focus:border-white/20 dark:focus-visible:ring-cyan-300/30 @enderror dark:bg-zinc-950/35 dark:text-white dark:placeholder:text-zinc-500"
                                                     placeholder="{{ __('imposter.placeholder.password') }}"
                                                 />
+                                                @error('joinPassword')
+                                                    <span class="mt-1.5 block text-xs font-medium text-rose-600 dark:text-rose-400">{{ $message }}</span>
+                                                @enderror
                                             </label>
                                         @endif
 

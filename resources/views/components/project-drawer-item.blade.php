@@ -12,6 +12,8 @@
     $status = $item['status'] ?? null;
     $highlightsTitle = $item['highlights_title'] ?? 'Ne Yaptım';
     $hasDetail = count($highlights) > 0;
+    $isTurkish = app()->getLocale() === 'tr';
+    $archivedLabel = $isTurkish ? 'Arşiv' : 'Archived';
 
     $badgeClass = $badge ? ($badgeColors[$badge] ?? 'bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400') : null;
 
@@ -114,7 +116,7 @@
 
 
                 @if ($isArchived)
-                    <span class="inline-flex rounded-full bg-zinc-100 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-zinc-400 dark:bg-white/5 dark:text-zinc-500">Arşiv</span>
+                    <span class="inline-flex rounded-full bg-zinc-100 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-zinc-400 dark:bg-white/5 dark:text-zinc-500">{{ $archivedLabel }}</span>
                 @elseif (!$hasUrl)
                     <span class="inline-flex rounded-full bg-zinc-100 px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-zinc-500 dark:bg-white/5 dark:text-zinc-500">Private</span>
                 @endif

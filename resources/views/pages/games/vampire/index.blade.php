@@ -4,7 +4,7 @@
         'title' => __('vampire.title').' — '.__('portfolio.nav.games'),
         'description' => __('vampire.subtitle'),
         'canonical' => $gameUrl,
-        'image' => 'og-vampire.svg',
+        'image' => 'og-vampire.png',
     ];
 @endphp
 

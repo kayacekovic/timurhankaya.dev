@@ -6,7 +6,7 @@
         'title' => __('games.metaTitle'),
         'description' => __('games.metaDescription'),
         'canonical' => $gamesUrl,
-        'image' => 'og-games.svg',
+        'image' => 'og-games.png',
     ];
 @endphp
 

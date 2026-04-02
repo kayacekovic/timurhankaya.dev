@@ -5,7 +5,7 @@
         'title' => __('blog.metaTitle'),
         'description' => __('blog.metaDescription'),
         'canonical' => $canonicalUrl,
-        'image' => 'og-blog.svg',
+        'image' => 'og-blog.png',
     ];
 @endphp
 

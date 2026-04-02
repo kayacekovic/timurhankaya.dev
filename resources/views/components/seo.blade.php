@@ -16,8 +16,8 @@
 @php
     $siteName = \App\Support\Seo::siteName();
     $canonicalSource = is_string($canonical) && $canonical !== '' ? $canonical : url()->current();
-    $resolvedTitle = is_string($title) && $title !== '' ? $title : $siteName;
-    $resolvedDescription = is_string($description) && $description !== '' ? $description : 'Software development portfolio, writing, and multiplayer game experiments by Timurhan Kaya.';
+    $resolvedTitle = is_string($title) && $title !== '' ? $title : \App\Support\Seo::defaultTitle();
+    $resolvedDescription = is_string($description) && $description !== '' ? $description : \App\Support\Seo::defaultDescription();
     $resolvedKeywords = is_string($keywords) && $keywords !== '' ? $keywords : null;
     $resolvedCanonical = \App\Support\Seo::localizedUrl($canonicalSource);
     $resolvedImage = \App\Support\Seo::imageUrl(is_string($image) ? $image : null);
@@ -28,6 +28,17 @@
     $resolvedModifiedTime = \App\Support\Seo::normalizeDate($modifiedTime);
     $resolvedAlternates = is_array($alternates) && $alternates !== [] ? $alternates : \App\Support\Seo::alternateUrls($canonicalSource);
     $ogLocale = \App\Support\Seo::ogLocale();
+    $imagePath = parse_url($resolvedImage, PHP_URL_PATH) ?: '';
+    $imageExtension = strtolower(pathinfo($imagePath, PATHINFO_EXTENSION));
+    $imageMimeType = match ($imageExtension) {
+        'png' => 'image/png',
+        'jpg', 'jpeg' => 'image/jpeg',
+        'webp' => 'image/webp',
+        'svg' => 'image/svg+xml',
+        default => null,
+    };
+    $imageWidth = 1200;
+    $imageHeight = 630;
     $ogLocaleAlternates = collect(\App\Support\Seo::supportedLocales())
         ->reject(fn (string $locale): bool => $locale === app()->getLocale())
         ->map(fn (string $locale): string => \App\Support\Seo::ogLocale($locale))
@@ -62,6 +73,11 @@
 <meta property="og:url" content="{{ $resolvedCanonical }}">
 <meta property="og:image" content="{{ $resolvedImage }}">
 <meta property="og:image:alt" content="{{ $resolvedTitle }}">
+@if ($imageMimeType)
+    <meta property="og:image:type" content="{{ $imageMimeType }}">
+@endif
+<meta property="og:image:width" content="{{ $imageWidth }}">
+<meta property="og:image:height" content="{{ $imageHeight }}">
 <meta property="og:site_name" content="{{ $siteName }}">
 <meta property="og:locale" content="{{ $ogLocale }}">
 @foreach ($ogLocaleAlternates as $alternateLocale)
@@ -84,4 +100,5 @@
 <meta name="twitter:title" content="{{ $resolvedTitle }}">
 <meta name="twitter:description" content="{{ $resolvedDescription }}">
 <meta name="twitter:image" content="{{ $resolvedImage }}">
+<meta name="twitter:image:alt" content="{{ $resolvedTitle }}">
 <meta name="twitter:url" content="{{ $resolvedCanonical }}">

@@ -3,7 +3,7 @@
         'title' => __('imposter.title').' · '.__('imposter.roomTitle', ['code' => $roomCode]),
         'description' => __('imposter.roomMetaDescription'),
         'canonical' => \App\Support\Seo::route('games.imposter.room', ['roomCode' => $roomCode]),
-        'image' => 'og-imposter.svg',
+        'image' => 'og-imposter.png',
         'noindex' => true,
     ];
 @endphp

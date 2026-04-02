@@ -4,7 +4,7 @@
         'title' => __('imposter.title').' — '.__('portfolio.nav.games'),
         'description' => __('imposter.subtitle'),
         'canonical' => $gameUrl,
-        'image' => 'og-imposter.svg',
+        'image' => 'og-imposter.png',
     ];
 @endphp
 

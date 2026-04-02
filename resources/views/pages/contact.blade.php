@@ -22,7 +22,7 @@
         'description' => $t(data_get($content, 'meta.description')),
         'keywords' => $t(data_get($content, 'meta.keywords')),
         'canonical' => $contactUrl,
-        'image' => 'og-contact.svg',
+        'image' => 'og-contact.png',
         'author' => 'Timurhan Kaya',
     ];
 @endphp

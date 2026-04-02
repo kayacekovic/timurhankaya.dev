@@ -143,7 +143,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.png') }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <title>{{ $t['meta_title'] }}</title>
     <meta name="description" content="{{ $cvDescription }}">
@@ -157,13 +157,13 @@
     <meta property="og:title" content="{{ $t['meta_title'] }}">
     <meta property="og:description" content="{{ $cvDescription }}">
     <meta property="og:url" content="{{ $cvUrl }}">
-    <meta property="og:image" content="{{ \App\Support\Seo::imageUrl('og-cv.svg') }}">
+    <meta property="og:image" content="{{ \App\Support\Seo::imageUrl('og-cv.png') }}">
     <meta property="og:site_name" content="{{ \App\Support\Seo::siteName() }}">
     <meta property="og:locale" content="{{ \App\Support\Seo::ogLocale($locale) }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $t['meta_title'] }}">
     <meta name="twitter:description" content="{{ $cvDescription }}">
-    <meta name="twitter:image" content="{{ \App\Support\Seo::imageUrl('og-cv.svg') }}">
+    <meta name="twitter:image" content="{{ \App\Support\Seo::imageUrl('og-cv.png') }}">
     <script type="application/ld+json">{!! json_encode($cvJsonLd, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) !!}</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

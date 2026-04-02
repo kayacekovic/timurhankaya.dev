@@ -483,7 +483,7 @@
             "context_label": "Şirket"
           },
           {
-            "name": "guilla archiver",
+            "name": "Guille Marketplace",
             "description": "Restoran ve satıcılar için hızlı, kolay sipariş yönetimi ve satıcı katılım (onboarding) portalı. Figma'dan birebir tasarım uygulaması.",
             "stack": [
               "Laravel",
@@ -491,6 +491,7 @@
             ],
             "url": "https://portal.guillamarketplace.com/onboarding",
             "badge": "FinTech",
+            "archived": true,
             "year": "2023–2024",
             "highlights": [
               "Satıcı başvuru ve onboarding sürecini baştan sona kapsayan portal altyapısını sıfırdan geliştirilmesine katkı sağladım",
@@ -719,6 +720,7 @@
             ],
             "url": "",
             "badge": "Kurumsal",
+            "archived": true,
             "year": "2021",
             "highlights": [
               "Projeyi başka bir ekipten devralarak çalışır hale getirdim",

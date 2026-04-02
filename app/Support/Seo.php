@@ -48,6 +48,28 @@ final class Seo
         return 'Timurhan Kaya';
     }
 
+    public static function defaultTitle(?string $locale = null): string
+    {
+        $resolvedLocale = in_array($locale, self::SUPPORTED_LOCALES, true)
+            ? $locale
+            : self::currentLocale();
+
+        return $resolvedLocale === 'tr'
+            ? self::siteName().' - Yazilim Gelistirici'
+            : self::siteName().' - Software Developer';
+    }
+
+    public static function defaultDescription(?string $locale = null): string
+    {
+        $resolvedLocale = in_array($locale, self::SUPPORTED_LOCALES, true)
+            ? $locale
+            : self::currentLocale();
+
+        return $resolvedLocale === 'tr'
+            ? 'Buyuk olcekli urunler, yuksek trafikli sistemler ve oyun deneyimleri gelistiren yazilim gelistirici portfoyu.'
+            : 'Software developer portfolio focused on large-scale products, high-traffic systems, and multiplayer game experiments.';
+    }
+
     /**
      * @param  array<string, mixed>  $parameters
      */
@@ -121,7 +143,7 @@ final class Seo
             return $image;
         }
 
-        return asset(ltrim((string) ($image ?: 'og.svg'), '/'));
+        return asset(ltrim((string) ($image ?: 'og-basic.png'), '/'));
     }
 
     public static function normalizeDate(DateTimeInterface|string|null $value): ?string
