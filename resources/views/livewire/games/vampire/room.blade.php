@@ -544,7 +544,7 @@
                                 <span class="inline-flex h-[7px] w-[7px] animate-pulse rounded-full {{ $logDotClass }}"></span>
                                 <span class="font-mono text-[10px] font-bold uppercase tracking-[0.15em] {{ $logLabelClass }}">{{ __('vampire.eventLog') }}</span>
                             </div>
-                            <span class="font-mono text-[10px] text-zinc-600 dark:text-zinc-500">{{ count($eventLog) }} {{ __('vampire.eventLogCount') }}</span>
+                            <span class="font-mono text-[10px] text-zinc-600 dark:text-zinc-500">{{ count($history) }} {{ __('vampire.eventLogCount') }}</span>
                         </div>
 
                         {{-- Entries --}}
@@ -946,9 +946,9 @@
                                     <p class="cyber-title mt-2 text-xl font-bold text-zinc-950 dark:text-white">
                                         {{ __('vampire.dawn.killed', ['name' => $nightResult['killedName'] ?? '?']) }}
                                     </p>
-                                @elseif (($nightResult['killedId'] ?? null) !== null && ($nightResult['savedByName'] ?? null) !== null)
+                                @elseif (($nightResult['saved'] ?? false) === true)
                                     <p class="cyber-title mt-2 text-xl font-bold text-zinc-950 dark:text-white">
-                                        {{ __('vampire.dawn.savedBy', ['name' => $nightResult['savedByName']]) }}
+                                        {{ __('vampire.dawn.savedBy') }}
                                     </p>
                                 @else
                                     <p class="cyber-title mt-2 text-xl font-bold text-zinc-950 dark:text-white">{{ __('vampire.dawn.noKill') }}</p>

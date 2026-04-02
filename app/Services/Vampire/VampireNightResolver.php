@@ -66,7 +66,7 @@ final class VampireNightResolver
                 'icon' => '💚',
                 'type' => 'save',
                 'key' => 'vampire.log.save_night',
-                'params' => ['name' => $killedName],
+                'params' => [],
                 'night' => $room['nightNumber'],
             ];
         } else {

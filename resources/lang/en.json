@@ -325,7 +325,7 @@
     "vampire.gameover.roles": "Final roles",
     "vampire.gameover.rolesHint": "All secret roles are now revealed.",
     "vampire.log.death_night": ":name passed away tonight.",
-    "vampire.log.save_night": ":name was saved by the doctor.",
+    "vampire.log.save_night": "A player was saved by the doctor.",
     "vampire.log.no_kill_night": "Everyone survived the night.",
     "vampire.log.death_vote": ":name was eliminated by voting.",
     "vampire.log.no_death_vote": "It's a tie. No one was eliminated.",

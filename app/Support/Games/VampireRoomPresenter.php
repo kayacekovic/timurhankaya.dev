@@ -84,6 +84,15 @@ final class VampireRoomPresenter
             $detectiveInvestigationResults[(string) $playerId] = (string) $result;
         }
 
+        $nightResult = is_array($room['nightResult'] ?? null) ? (array) $room['nightResult'] : null;
+        if (is_array($nightResult) && (bool) ($nightResult['saved'] ?? false)) {
+            // Keep doctor protection target private on client payload.
+            $nightResult['killedId'] = null;
+            $nightResult['killedName'] = null;
+            $nightResult['savedById'] = null;
+            $nightResult['savedByName'] = null;
+        }
+
         return [
             'roomMissing' => false,
             'status' => $status,
@@ -110,7 +119,7 @@ final class VampireRoomPresenter
             'detectiveInvestigationResults' => $detectiveInvestigationResults,
             'lastProtectedId' => is_string($room['lastProtectedId'] ?? null) ? (string) $room['lastProtectedId'] : null,
             'nightVoteCounts' => $myAlignment === 'vampire' ? $nightVoteCounts : [],
-            'nightResult' => is_array($room['nightResult'] ?? null) ? (array) $room['nightResult'] : null,
+            'nightResult' => $nightResult,
             'dayVoteCounts' => $dayVoteCounts,
             'dayVoteMap' => $dayVoteMap,
             'myDayVote' => $myPlayerId !== null && isset($dayVotes[$myPlayerId]) ? (string) $dayVotes[$myPlayerId] : null,
