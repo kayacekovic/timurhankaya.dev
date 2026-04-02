@@ -531,9 +531,9 @@
                 margin: 0;
             }
             html {
-                font-size: 11.2px; /* Slightly shrink to fit 1 page */
-                -webkit-print-color-adjust: economy;
-                print-color-adjust: economy;
+                font-size: 12px; /* Slightly shrink to fit 1 page */
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
             body { background: white; margin: 0; padding: 0; }
             .page {
